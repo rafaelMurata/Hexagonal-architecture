@@ -1,4 +1,4 @@
-package com.baeldung.persistence.in_memory;
+package com.baeldung.domain.repostory;
 
 import java.util.List;
 

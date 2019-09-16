@@ -1,4 +1,4 @@
-package com.baeldung;
+package com.baeldung.controller;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.baeldung.domain.Employee;
-import com.baeldung.persistence.in_memory.EmployeeRepository;
+import com.baeldung.domain.repostory.EmployeeRepository;
 
 @RestController
 @RequestMapping("/employees/")
