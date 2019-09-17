@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,22 +17,14 @@ import com.baeldung.persistence.in_memory.factory.CarFactory;
 @RequestMapping("/cars/")
 public class CarController {
 
-	@Autowired
+    @Autowired
     private CarFactory carFactory;
 
     @PostMapping("create")
     public void create(@RequestBody Car request) {
     	carFactory.getConnection(
     				CarEnum.MEMORY.name())
-    	            .saveCar(request.getName(), request.getAge());
-    }
-    
-    @GetMapping("getCarById/{id}")
-    public Car getCarById(@PathVariable Integer id) {
-    	Car car = carFactory.getConnection(
-    			CarEnum.MEMORY.name())
-    			.getCarById(id);
-        return car;
+    	            .saveCar(request.getBrand(), request.getYear());
     }
     
     @GetMapping("listAllCars")

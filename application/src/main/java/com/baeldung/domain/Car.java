@@ -9,47 +9,49 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "car")
 public class Car {
-	@Id
-	@GeneratedValue
-	@Column(name = "id")
-	private Integer id;
+    
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
+    private Integer id;
 
-	@Column(name = "name")
-	private String name;
+    @Column(name = "brand")
+    private String brand;
 
-	@Column(name = "age")
-	private Integer age;
+    @Column(name = "year")
+    private Integer year;
 
-	public Car() {
-	}
-	
-	public Car(String name, Integer age) {
-		this.name = name;
-		this.age = age;
-	}
+    public Car() {
+    }
+    
+    public Car(String brand, Integer year) {
+        super();
+        this.brand = brand;
+        this.year = year;
+    }
 
-	public Integer getId() {
-		return id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getBrand() {
+        return brand;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
 
-	public Integer getAge() {
-		return age;
-	}
+    public Integer getYear() {
+        return year;
+    }
 
-	public void setAge(Integer age) {
-		this.age = age;
-	}
+    public void setYear(Integer year) {
+        this.year = year;
+    }
 
 }

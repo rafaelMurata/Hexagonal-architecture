@@ -9,9 +9,9 @@
     <h2>List all Cars</h2>
 	<div id="table"></div>
 	
-	<h2>Sell a new car</h2>
-	Name:<input id="name" type="text" />
-	Age:<input id="age" type="text" />
+	<h2>New car</h2>
+	brand:<input id="brand" type="text" />
+	Year:<input id="year" type="text" />
 	 <input type='submit' onclick="save()" value="save"></input> 
 		
 </body>
@@ -28,7 +28,7 @@ function listAll(){
 	   var obj = JSON.parse(this.responseText);
 	    var txt = "<table border='1'>";
 	    for (x in obj) {
-	      txt += "<tr><td>" + obj[x].name + "</td> ><td>" + obj[x].age + "</td></tr>";
+	      txt += "<tr><td>" + obj[x].brand + "</td> ><td>" + obj[x].year + "</td></tr>";
 	    }
 	    txt += "</table>" 
 	    document.getElementById("table").innerHTML = txt;
@@ -37,33 +37,27 @@ function listAll(){
 
 	xhr.open("GET", "http://localhost:8080/cars/listAllCars");
 	xhr.setRequestHeader("Content-Type", "application/json");
-
-
 	xhr.send(data);
 }
 
-
-
 function save(){
 	var data = JSON.stringify({
-		  "name": document.getElementById("name").value,
-		  "age": document.getElementById("age").value
-		});
+	  "brand": document.getElementById("brand").value,
+	  "year": document.getElementById("year").value
+	});
 
-		var xhr = new XMLHttpRequest();
-		xhr.withCredentials = true;
+	var xhr = new XMLHttpRequest();
+	xhr.withCredentials = true;
 
-		xhr.addEventListener("readystatechange", function () {
-		  if (this.readyState === 4) {
-				window.location.reload(true);
-		  }
-		});
+	xhr.addEventListener("readystatechange", function () {
+	  if (this.readyState === 4) {
+			window.location.reload(true);
+	  }
+	});
 
-		xhr.open("POST", "http://localhost:8080/cars/create");
-		xhr.setRequestHeader("Content-Type", "application/json");
-
-		xhr.send(data);
-
+	xhr.open("POST", "http://localhost:8080/cars/create");
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.send(data);
 }
 
 

@@ -8,12 +8,7 @@ import com.baeldung.domain.repostory.CarRepositoryPort;
 public class DefaultCarServiceAdapter implements CarRepositoryPort {
 
 	@Override
-	public void saveCar(String name, Integer age) {
-	}
-
-	@Override
-	public Car getCarById(Integer userId) {
-		return null;
+	public void saveCar(String brand, Integer year) {
 	}
 
 	@Override

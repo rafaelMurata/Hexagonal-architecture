@@ -6,9 +6,7 @@ import com.baeldung.domain.Car;
 
 public interface CarRepositoryPort {
 
-    void saveCar(String name, Integer age);
+    void saveCar(String brand, Integer year);
 
-    Car getCarById(Integer userId);
-
-	List<Car> listAllCars();
+    List<Car> listAllCars();
 }
