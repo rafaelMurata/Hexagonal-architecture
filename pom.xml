@@ -6,6 +6,7 @@
 	<groupId>com.com.baeldung</groupId>
 	<artifactId>hexagonal_arch</artifactId>
 	<packaging>pom</packaging>
+			<version>0.0.1-SNAPSHOT</version>
 
 	<name>hexagonal_arch</name>
     <description>A quick and practical example of Hexagonal Architecture in Java</description>
@@ -27,4 +28,11 @@
 		<module>infrastructure</module>
 		<module>view</module>
 	</modules>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 </project>

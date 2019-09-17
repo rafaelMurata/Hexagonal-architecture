@@ -12,7 +12,7 @@
 	<h2>Create a Employee</h2>
 	Name:<input id="name" type="text" />
 	Age:<input id="age" type="text" />
-	 <button type='button' onclick="save()">save</button> 
+	 <input type='submit' onclick="save()" value="save"></input> 
 		
 </body>
 <script type="text/javascript">
@@ -55,7 +55,7 @@ function save(){
 
 		xhr.addEventListener("readystatechange", function () {
 		  if (this.readyState === 4) {
-		    console.log(this.responseText);
+				window.location.reload(true);
 		  }
 		});
 
@@ -63,7 +63,6 @@ function save(){
 		xhr.setRequestHeader("Content-Type", "application/json");
 
 		xhr.send(data);
-		location.reload();
 
 }
 

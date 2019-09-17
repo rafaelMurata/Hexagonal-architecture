@@ -6,15 +6,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.baeldung.domain.Employee;
 import com.baeldung.domain.repostory.EmployeeRepository;
 
-
 @Service
-public class MockemployeeRepository implements EmployeeRepository {
+public class MockEmployeeService implements EmployeeRepository {
 
 	  @PersistenceContext
 	    private EntityManager entityManager;
