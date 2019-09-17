@@ -23,18 +23,24 @@ public class CarController {
 
     @PostMapping("create")
     public void create(@RequestBody Car request) {
-    	carFactory.getConnection(CarEnum.MEMORY.name()).saveCar(request.getName(), request.getName(), request.getAge());
+    	carFactory.getConnection(
+    				CarEnum.MEMORY.name())
+    	            .saveCar(request.getName(), request.getAge());
     }
     
     @GetMapping("getCarById/{id}")
     public Car getCarById(@PathVariable Integer id) {
-    	Car car = carFactory.getConnection(CarEnum.MEMORY.name()).getCarById(id);
+    	Car car = carFactory.getConnection(
+    			CarEnum.MEMORY.name())
+    			.getCarById(id);
         return car;
     }
     
     @GetMapping("listAllCars")
     public List<Car> listAllCars() {
-    	List<Car> cars = carFactory.getConnection(CarEnum.MEMORY.name()).listAllCars();
+    	List<Car> cars = carFactory.getConnection(
+    			CarEnum.MEMORY.name())
+    			.listAllCars();
         return cars;
     }
 }

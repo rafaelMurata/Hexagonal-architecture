@@ -32,10 +32,7 @@ public class MockCarServiceAdapter implements CarRepositoryPort {
 		
 		@Transactional
 	    @Override
-	    public void saveCar(String name, String role, Integer age) {
-	        Car car = new Car();
-	        car.setName(name);
-	        car.setAge(age);
-	        entityManager.persist(car);
+	    public void saveCar(String name, Integer age) {
+	        entityManager.persist(new Car(name,age));
 	    }
 }

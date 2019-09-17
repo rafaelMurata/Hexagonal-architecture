@@ -21,11 +21,9 @@ public class Car {
 	private Integer age;
 
 	public Car() {
-
 	}
-
-	public Car(Integer id, String name, Integer age) {
-		this.id = id;
+	
+	public Car(String name, Integer age) {
 		this.name = name;
 		this.age = age;
 	}

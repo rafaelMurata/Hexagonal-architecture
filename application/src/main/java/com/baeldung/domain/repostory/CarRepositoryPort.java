@@ -6,7 +6,7 @@ import com.baeldung.domain.Car;
 
 public interface CarRepositoryPort {
 
-    void saveCar(String name, String role, Integer age);
+    void saveCar(String name, Integer age);
 
     Car getCarById(Integer userId);
 

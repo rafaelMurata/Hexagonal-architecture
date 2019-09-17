@@ -11,20 +11,16 @@ import com.baeldung.domain.repostory.CarRepositoryPort;
 public class MongoDBCarServiceAdapter implements CarRepositoryPort {
 
 	@Override
-	public void saveCar(String name, String role, Integer age) {
-		// mongoDB example
-
+	public void saveCar(String name, Integer age) {
 	}
 
 	@Override
 	public Car getCarById(Integer userId) {
-		// mongoDB example
 		return null;
 	}
 
 	@Override
 	public List<Car> listAllCars() {
-		// mongoDB example
 		return null;
 	}
 

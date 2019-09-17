@@ -3,7 +3,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
 	<artifactId>view</artifactId>
 	<name>view</name>
 	  <packaging>jar</packaging>
@@ -13,7 +12,6 @@
 		<artifactId>hexagonal_arch</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -38,7 +36,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>com.com.baeldung</groupId>
 			<artifactId>application</artifactId>
@@ -52,57 +49,12 @@
 	</dependencies>
 
 	<build>
-		<finalName>view</finalName>
+		<finalName>${artifactId}</finalName>
 		<plugins>
-
-			<!-- download source code in Eclipse, best practice -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
-				<configuration>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>false</downloadJavadocs>
-				</configuration>
 			</plugin>
-
-			<!-- Set a compiler level -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-						<source>${java.version}</source>
-					<target>${java.version}</target>
-				</configuration>
-			</plugin>
-
-			<!-- Maven Assembly Plugin -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<!-- get all project dependencies -->
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-					<!-- MainClass in mainfest make a executable jar -->
-					<archive>
-					  <manifest>
-						<mainClass>com.baeldung.Application</mainClass>
-					  </manifest>
-					</archive>
-
-				</configuration>
-				<executions>
-				  <execution>
-					<id>make-assembly</id>
-					<phase>package</phase> 
-					<goals>
-						<goal>single</goal>
-					</goals>
-				  </execution>
-				</executions>
-			</plugin>
-
 		</plugins>
 	</build>
 	

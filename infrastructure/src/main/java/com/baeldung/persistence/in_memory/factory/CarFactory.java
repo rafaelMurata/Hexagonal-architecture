@@ -26,8 +26,7 @@ public class CarFactory {
 	         return  mongoDBCarServiceAdapter;
 	         
 	      } else if(typeConnection.equalsIgnoreCase(CarEnum.MEMORY.name())){
-	         return mockCarServiceAdapter;
-	         
+	         return mockCarServiceAdapter;    
 	      }
 	     
 		return defaultServiceAdapter;
