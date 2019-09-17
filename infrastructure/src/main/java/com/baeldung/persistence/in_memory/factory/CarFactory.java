@@ -18,7 +18,6 @@ public class CarFactory {
 	@Autowired
 	private MongoDBCarServiceAdapter mongoDBCarServiceAdapter;
 	
-	@Autowired
 	private DefaultCarServiceAdapter defaultServiceAdapter;
 
 	public CarRepositoryPort getConnection(String typeConnection) {
