@@ -6,10 +6,10 @@
 </head>
 <body onload="listAll()">
     
-    <h2>List all Employees</h2>
+    <h2>List all Cars</h2>
 	<div id="table"></div>
 	
-	<h2>Create a Employee</h2>
+	<h2>Sell a new car</h2>
 	Name:<input id="name" type="text" />
 	Age:<input id="age" type="text" />
 	 <input type='submit' onclick="save()" value="save"></input> 
@@ -35,7 +35,7 @@ function listAll(){
 	  }
 	});
 
-	xhr.open("GET", "http://localhost:8080/employees/listAllEmployees");
+	xhr.open("GET", "http://localhost:8080/cars/listAllCars");
 	xhr.setRequestHeader("Content-Type", "application/json");
 
 
@@ -59,7 +59,7 @@ function save(){
 		  }
 		});
 
-		xhr.open("POST", "http://localhost:8080/employees/create");
+		xhr.open("POST", "http://localhost:8080/cars/create");
 		xhr.setRequestHeader("Content-Type", "application/json");
 
 		xhr.send(data);

@@ -7,8 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "employee")
-public class Employee {
+@Table(name = "car")
+public class Car {
 	@Id
 	@GeneratedValue
 	@Column(name = "id")
@@ -20,11 +20,11 @@ public class Employee {
 	@Column(name = "age")
 	private Integer age;
 
-	public Employee() {
+	public Car() {
 
 	}
 
-	public Employee(Integer id, String name, Integer age) {
+	public Car(Integer id, String name, Integer age) {
 		this.id = id;
 		this.name = name;
 		this.age = age;
